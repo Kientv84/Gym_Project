@@ -110,7 +110,7 @@ function Register() {
                   autocomplete="name"
                   value={formValues.name}
                   required
-                  class="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
+                  class="border border-gray-300 bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
                   placeholder="Name of user"
                   onChange={handleFormChange}
                 />
@@ -123,7 +123,7 @@ function Register() {
                   type="birthday"
                   autocomplete="birthday"
                   required
-                  class="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
+                  class="border border-gray-300 bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
                   placeholder="Date of birth"
                   onChange={handleFormChange}
                 />
@@ -136,7 +136,7 @@ function Register() {
                   autocomplete="phone"
                   value={formValues.phone}
                   required
-                  class="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
+                  class="border border-gray-300 bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
                   placeholder="Phone number"
                   onChange={handleFormChange}
                 />
@@ -150,7 +150,7 @@ function Register() {
                   autoComplete="email"
                   value={formValues.email}
                   required
-                  className="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
+                  className="border border-gray-300 bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
                   placeholder="Email address"
                   onChange={handleFormChange}
                 />
@@ -163,7 +163,7 @@ function Register() {
                   autocomplete="current-password"
                   value={formValues.password}
                   required
-                  class="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
+                  class="border border-gray-300 bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
                   placeholder="Password"
                   onChange={handleFormChange}
                 />
