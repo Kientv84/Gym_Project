@@ -4,7 +4,7 @@ function HeaderComponent() {
   const navigate = useNavigate();
   return (
     <div className="font-[sans-serif]">
-      <div className="fixed top-0 left-0 right-0 w-full gap-20 min-h-20 flex bg-white-500 items-center justify-center">
+      <div className="fixed top-0 left-0 right-0 w-full gap-20 min-h-20 flex bg-white items-center justify-center">
         <a className="fixed left-8 flex items-center cusor-pointer" href="http://localhost:3001/">
           <img src="https://cdn.gymshark.com/images/branding/gs-icon-black.svg" />
         </a>
