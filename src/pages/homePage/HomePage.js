@@ -1,86 +1,58 @@
-import { useEffect, useRef, useState } from 'react';
+import ShortVideo from '../../components/ShortVideoComponent/ShortVideoComponent';
+import Slider from '../../components/Slider/SliderComponent';
 
 function Home() {
-  const [currentSlider, SetCurrentSlider] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const intervalRef = useRef(null);
-
-  const slides = [
-    { id: 1, text: 'Slider 1', link: '/slide-1' },
-    { id: 2, text: 'Slider 2', link: '/slide-2' },
-    { id: 3, text: 'Slider 3', link: '/slide-3' },
-  ];
-
-  useEffect(() => {
-    console.log('intervalRef', intervalRef);
-
-    if (isPlaying) {
-      intervalRef.current = setInterval(() => {
-        SetCurrentSlider((prev) => (prev + 1) % slides.length);
-      }, 2000);
-    }
-
-    return () => clearInterval(intervalRef.current);
-  }, [isPlaying]);
-
-  const togglePlay = () => {
-    setIsPlaying(!isPlaying);
-  };
-
   return (
-    <div className="h-screen pt-20">
+    <div className="pt-20 h-full">
       {/*  slider discount */}
-      <div className="w-full font-[sans-serif] flex">
-        <div className="w-full justify-center text-center flex px-4 py-4 width-full border-t border-gray">
-          <div>
-            {slides.map((slide, index) => {
-              return (
-                <a
-                  className={`text-lg font-medium px-4 py-2 rounded transition-all duration-300 ${
-                    index === currentSlider ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'
-                  }`}
-                  key={slide.id}
-                  href={slide.link}
-                >
-                  {slide.text}
-                </a>
-              );
-            })}
-          </div>
-          {/* button play/ pause*/}
-          <button className="fixed right-12 px-2 py-2" onClick={togglePlay}>
-            {isPlaying ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
+      <section className="w-full">
+        <Slider />
+      </section>
 
       {/* short video about New soft sculpt is here */}
+      <section className="relative h-full">
+        <ShortVideo
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="https://assets.gymshark.com/wl6q2in9o7k3/34KwjL1IhggjZ7K9iFmTxN/81fd6455aeeab4c68fd26cc22d775d7a/image-1920x720__1_.jpg"
+          src="https://assets.gymshark.com/wl6q2in9o7k3/6RPjIkERo5UAfV66YGavus/346c0806aa0659042c045ef8d55a4ff3/SOFT_SCULPT__WEB_BANNER.mp4"
+        />
+        {/* Overlay content */}
+        <div className="absolute z-10 top-0 left-0 w-full h-full flex items-center px-10 md:px-20 bg-gradient-to-r ">
+          <div className="max-w-xl text-white space-y-6">
+            <h1 className="text-4xl md:text-5xl font-bold uppercase leading-tight">
+              New Soft
+              <br />
+              Sculpt is here
+            </h1>
+            <p className="text-md md:text-lg">
+              Soft, stretchy, barely there fabrics and subtle contouring in all the places you want it...you’ll wear
+              this everywhere.
+            </p>
+            <a
+              href="https://www.gymshark.com/collections/new-releases/womens?banner_id=hp-softsculpt"
+              className="inline-block bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/*Get the Look */}
+      <section className="py-16 px-6 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Get the Look</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Các item sẽ được map vào đây */}
+            <li className="bg-white rounded shadow p-4">Item 1</li>
+            <li className="bg-white rounded shadow p-4">Item 2</li>
+            <li className="bg-white rounded shadow p-4">Item 3</li>
+          </ul>
+        </div>
+      </section>
     </div>
   );
 }
