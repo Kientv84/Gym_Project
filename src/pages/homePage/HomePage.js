@@ -1,3 +1,4 @@
+import CardImage from '../../components/CardImageComponent/CardImageComponent';
 import ShortVideo from '../../components/ShortVideoComponent/ShortVideoComponent';
 import Slider from '../../components/Slider/SliderComponent';
 
@@ -42,14 +43,29 @@ function Home() {
       </section>
 
       {/*Get the Look */}
-      <section className="py-16 px-6 bg-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Get the Look</h2>
+      <section className="py-6 bg-gray-100">
+        <div className="text-4xl md:text-5xl w-full">
+          <h2 className="text-xl md:text-2xl py-3 font-bold font-[sans-serif] uppercase md:px-20">Get the Look</h2>
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Các item sẽ được map vào đây */}
-            <li className="bg-white rounded shadow p-4">Item 1</li>
-            <li className="bg-white rounded shadow p-4">Item 2</li>
-            <li className="bg-white rounded shadow p-4">Item 3</li>
+            <li className="bg-white rounded shadow">
+              <CardImage
+                url="https://www.gymshark.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fwl6q2in9o7k3%2F66Rt1ZPvdpW1TJD48nLYYq%2Fb8e0ab3d0d0f2294691d74f6a037d3ed%2Fgymsharkwomen_1743618604_3602056361550750680.jpg&w=828&q=90"
+                name="@isabelllewis"
+              />
+            </li>
+            <li className="bg-white rounded shadow p-4">
+              <CardImage
+                url="https://www.gymshark.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fwl6q2in9o7k3%2F1W1FdpFZSbT2IZtNSWv1el%2F2503f5a783fef6c3b62ae7bf29aab000%2FHeadless_Cards_-_22487539.png&w=828&q=90"
+                name="@whatemwore"
+              />
+            </li>
+            <li className="bg-white rounded shadow p-4">
+              <CardImage
+                url="https://www.gymshark.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fwl6q2in9o7k3%2F266aVlUDuTBRhPRwI6R3Tz%2F90fd069bf8b9a679268e1dc678833835%2FHeadless_Cards_-_22559642.png&w=828&q=90"
+                name="@erikaholguinn"
+              />
+            </li>
           </ul>
         </div>
       </section>

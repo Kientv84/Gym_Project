@@ -2,7 +2,7 @@ import React from 'react';
 
 function ShortVideo({ src, poster, autoPlay, loop, muted, controls, width, className, text }) {
   return (
-    <div className="relative  w-full ">
+    <div className="relative w-full ">
       <video
         src={src}
         poster={poster}

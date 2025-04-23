@@ -2,6 +2,11 @@ import { useNavigate } from 'react-router-dom';
 
 function HeaderComponent() {
   const navigate = useNavigate();
+
+  const handleDirect = (type) => {
+    navigate(`/sales-product/${type}`);
+  };
+
   return (
     <div className="font-[sans-serif]">
       <div className="fixed top-0 left-0 right-0 w-full gap-20 min-h-20 flex items-center justify-center">
@@ -9,9 +14,15 @@ function HeaderComponent() {
           <img src="https://cdn.gymshark.com/images/branding/gs-icon-black.svg" />
         </a>
         <div className="flex gap-3">
-          <span className="px-3 py-3 font-bold text-md hover:underline">MEN</span>
-          <span className="px-3 py-3 font-bold text-md hover:underline">WOMAN</span>
-          <span className="px-3 py-3 font-bold text-md hover:underline">ACCESORIES</span>
+          <span onClick={() => handleDirect('men')} className="px-3 py-3 font-bold text-md hover:underline">
+            MEN
+          </span>
+          <span onClick={() => handleDirect('woman')} className="px-3 py-3 font-bold text-md hover:underline">
+            WOMAN
+          </span>
+          <span onClick={() => handleDirect('accessories')} className="px-3 py-3 font-bold text-md hover:underline">
+            ACCESSORIES
+          </span>
         </div>
         <div className=" flex gap-3">
           <input
